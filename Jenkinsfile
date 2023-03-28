@@ -46,8 +46,7 @@ pipeline {
     }
     post {
         always {
-            echo 'Checkmate!'
-            sh 'docker-compose down --rmi all --volumes || true'
+            echo 'Checkmate! '
         }
   }
 }
