@@ -25,13 +25,14 @@ pipeline {
 
         stage('Build') {
             steps { 
-                sh 'docker compose build'
+                sh 'docker compose build pithawatnuckong/full-app'
                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
             }
         }
 
         stage('Registry') { 
             steps { 
+                sh "docker images"
                 sh "docker push ${PYTHON_APP_IMAGE}"
                 sh "docker push ${REACT_APP_IMAGE}"
             }
