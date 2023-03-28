@@ -32,8 +32,8 @@ pipeline {
 
         stage('Registry') { 
             steps { 
-                sh "sudo docker push ${PYTHON_APP_IMAGE}"
-                sh "sudo docker push ${REACT_APP_IMAGE}"
+                sh "docker push ${PYTHON_APP_IMAGE}"
+                sh "docker push ${REACT_APP_IMAGE}"
             }
         }
     }
