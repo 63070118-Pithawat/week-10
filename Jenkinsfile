@@ -36,9 +36,17 @@ pipeline {
                 sh "docker push ${REACT_APP_IMAGE}"
             }
         }
+
+        stage('Build-slave') { 
+            steps { 
+                echo 'Starting build slave ...'
+                build job: 'slave', parameters: [string(name: 'REACT_APP_IMAGE', value: ${REACT_APP_IMAGE}), string(name: 'PYTHON_APP_IMAGE', value: ${PYTHON_APP_IMAGE})]
+            }
+        }
     }
     post {
         always {
+            echo 'Clear docker credentials.'
             sh 'docker logout'
         }
   }
