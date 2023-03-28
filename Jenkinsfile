@@ -46,8 +46,7 @@ pipeline {
     }
     post {
         always {
-            echo 'Clear docker credentials.'
-            sh 'docker logout'
+            echo 'Checkmate'
         }
   }
 }
