@@ -30,8 +30,8 @@ pipeline {
 
         stage('Registry') { 
             steps { 
-                sh "docker push ${PYTHON_APP_IMAGE}:latest"
-                sh "docker push ${REACT_APP_IMAGE}:latest"
+                sh "hub.docker.io/docker push ${PYTHON_APP_IMAGE}:latest"
+                sh "hub.docker.io/docker push ${REACT_APP_IMAGE}:latest"
             }
         }
     }
