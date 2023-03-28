@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  server:
+    build: ./backend
+    image: pithawatnuckong/react-web
+    restart: always
+    env_file: ./.env
+    container_name: react-web
+    ports:
+      - $SERVER_PORT:80
+    tty: true
+  web:
+    build: ./frontend
+    image: pithawatnuckong/python-server
+    restart: always
+    container_name: python-server
+    env_file: ./.env
+    depends_on:
+      - server
+    ports:
+      - $WEB_PORT:3000
+    tty: true
