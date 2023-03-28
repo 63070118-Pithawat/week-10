@@ -25,7 +25,7 @@ pipeline {
 
         stage('Build') {
             steps { 
-                sh 'docker compose build!'
+                sh 'docker compose build'
                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
             }
         }
@@ -40,7 +40,7 @@ pipeline {
 
         stage('Build-slave') { 
             steps { 
-                echo 'Starting build slave ...'
+                echo 'Starting build slave ...!'
                 build job: 'my-build-job', parameters: [string(name: 'BUILD_NUMBER', value: env.BUILD_NUMBER)]
             }
         }
