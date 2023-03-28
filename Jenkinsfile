@@ -40,7 +40,7 @@ pipeline {
         stage('Build-slave') { 
             steps { 
                 echo 'Starting build slave ...'
-                build job: 'slave', parameters: [string(name: 'REACT_APP_IMAGE', value: ${REACT_APP_IMAGE}), string(name: 'PYTHON_APP_IMAGE', value: ${PYTHON_APP_IMAGE})]
+                build job: 'my-build-job', parameters: [string(name: 'BUILD_NUMBER', value: env.BUILD_NUMBER)]
             }
         }
     }
