@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        REACT_APP_IMAGE = pithawatnuckong/react-web
-        PYTHON_APP_IMAGE = pithawatnuckong/python-server 
+        REACT_APP_IMAGE = "pithawatnuckong/react-web"
+        PYTHON_APP_IMAGE = "pithawatnuckong/python-server"
     }
 
     stages { 
