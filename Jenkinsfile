@@ -13,7 +13,8 @@ pipeline {
                 echo 'Initial then delete images and containers'
                 echo "Path is : ${pwd()}"
                 sh 'docker-compose down --rmi all --volumes || true'
-                sh 'docker images -q'
+                sh 'docker images'
+                sh 'docker images --quiet'
             }
         }
 
