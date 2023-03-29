@@ -41,7 +41,7 @@ pipeline {
         stage('Build-slave') { 
             steps { 
                 echo 'Starting build slave ...'
-                build job: 'my-build-job', parameters: [string(name: 'BUILD_NUMBER', value: env.BUILD_NUMBER)]
+                // build job: 'my-build-job', parameters: [string(name: 'BUILD_NUMBER', value: env.BUILD_NUMBER)]
             }
         }
     }
