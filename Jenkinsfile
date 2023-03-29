@@ -14,7 +14,8 @@ pipeline {
                 echo "Path is : ${pwd()}"
                 sh 'docker-compose down --rmi all --volumes || true'
                 sh 'docker images'
-                sh 'docker images --quiet'
+                sh 'docker ps'
+                sh 'docker ps -a'
             }
         }
 
@@ -42,7 +43,7 @@ pipeline {
         stage('Build-slave') { 
             steps { 
                 echo 'Starting build slave ...'
-                // build job: 'my-build-job', parameters: [string(name: 'BUILD_NUMBER', value: env.BUILD_NUMBER)]
+                build job: 'my-build-job', parameters: [string(name: 'BUILD_NUMBER', value: env.BUILD_NUMBER)]
             }
         }
     }
