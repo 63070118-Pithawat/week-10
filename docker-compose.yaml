@@ -2,7 +2,7 @@ version: '3'
 
 services:
   server:
-    build: ./backend
+    build: ./frontend
     image: pithawatnuckong/react-web
     restart: always
     env_file: ./.env
@@ -11,7 +11,7 @@ services:
       - $SERVER_PORT:80
     tty: true
   web:
-    build: ./frontend
+    build: ./backend
     image: pithawatnuckong/python-server
     restart: always
     container_name: python-server
