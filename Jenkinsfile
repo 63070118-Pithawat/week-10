@@ -19,12 +19,6 @@ pipeline {
             }
         }
 
-        stage('Specification'){
-            steps {
-                echo 'Wait for implementation.'
-            }
-        }
-
         stage('Build') {
             steps { 
                 sh 'docker compose build'
