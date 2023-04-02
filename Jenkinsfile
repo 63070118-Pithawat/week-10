@@ -43,7 +43,7 @@ pipeline {
     }
     post {
         always {
-            echo 'Checkmate! '
+            echo 'Success!'
         }
   }
 }
