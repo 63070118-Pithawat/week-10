@@ -35,7 +35,7 @@ export default function UploadImage() {
 			numbers: [6, 3, 0, 7, 0, 1, 1, 8],
 		};
 		const { data } = await axios.post(
-			"http://13.212.105.76:8090/process-image",
+			"http://54.254.201.77:8081/process-image",
 			imageFile,
 		);
 		setUploadedFile(data.processed_image);
